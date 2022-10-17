@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BankingPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="customerAccount">
+          <Key>
+            <PropertyRef Name="Account_No" />
+          </Key>
+          <Property Name="Account_No" Type="int" Nullable="false" />
+          <Property Name="First_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Last_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Marital_Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="State_Of_Origin" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mother_Maiden_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email_Id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Residential_Address" Type="nvarchar(max)" />
+          <Property Name="Picture" Type="image" />
+          <Property Name="Emergency_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emergency_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Date_Of_Registration" Type="nvarchar" MaxLength="50" />
+          <Property Name="Last_Edited" Type="nvarchar" MaxLength="50" />
+          <Property Name="Staff_On_Duty" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deposit">
+          <Key>
+            <PropertyRef Name="Serial_No" />
+          </Key>
+          <Property Name="Serial_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Previous_Balance" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Account_No" Type="int" />
+          <Property Name="Deposit_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deposit_Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Depositor_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Depositor_Phone_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Staff_On_Duty" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cheque_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date_Of_Deposit" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="staffAccount1">
+          <Key>
+            <PropertyRef Name="staffId" />
+          </Key>
+          <Property Name="staffId" Type="int" Nullable="false" />
+          <Property Name="First_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Last_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Marital_Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="State_Of_Origin" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mother_Maiden_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email_Id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Residential_Address" Type="nvarchar(max)" />
+          <Property Name="Picture" Type="image" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emergency_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emergency_Phone_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date_Of_Registration" Type="nvarchar" MaxLength="50" />
+          <Property Name="Last_Edited" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Withdrawal">
+          <Key>
+            <PropertyRef Name="Serial_No" />
+          </Key>
+          <Property Name="Serial_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Account_No" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Previous_Balance" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Withdrawal_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Withdrawal_Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Date_Of_Withrawal" Type="nvarchar" MaxLength="50" />
+          <Property Name="Staff_On_Duty" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cheque_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cheque_Bearer" Type="nvarchar" MaxLength="50" />
+          <Property Name="Withdrawal_Slip_No" Type="int" />
+          <Property Name="Cheque_Bearer_Picture" Type="image" />
+        </EntityType>
+        <EntityContainer Name="BankingPModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customerAccount" EntityType="Self.customerAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deposit" EntityType="Self.Deposit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="staffAccount1" EntityType="Self.staffAccount1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Withdrawal" EntityType="Self.Withdrawal" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BankingPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="BankingPEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="staffAccount1" EntityType="BankingPModel.staffAccount1" />
+          <EntitySet Name="Deposits" EntityType="BankingPModel.Deposit" />
+          <EntitySet Name="Withdrawals" EntityType="BankingPModel.Withdrawal" />
+          <EntitySet Name="customerAccounts" EntityType="BankingPModel.customerAccount" />
+        </EntityContainer>
+        <EntityType Name="staffAccount1">
+          <Key>
+            <PropertyRef Name="staffId" />
+          </Key>
+          <Property Name="staffId" Type="Int32" Nullable="false" />
+          <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Marital_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State_Of_Origin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mother_Maiden_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Residential_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emergency_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emergency_Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Of_Registration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Edited" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Deposit">
+          <Key>
+            <PropertyRef Name="Serial_No" />
+          </Key>
+          <Property Name="Serial_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Previous_Balance" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Account_No" Type="Int32" />
+          <Property Name="Deposit_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Deposit_Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Depositor_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Depositor_Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Staff_On_Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cheque_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Of_Deposit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Withdrawal">
+          <Key>
+            <PropertyRef Name="Serial_No" />
+          </Key>
+          <Property Name="Serial_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account_No" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Previous_Balance" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Withdrawal_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Withdrawal_Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Date_Of_Withrawal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Staff_On_Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cheque_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cheque_Bearer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Withdrawal_Slip_No" Type="Int32" />
+          <Property Name="Cheque_Bearer_Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="customerAccount">
+          <Key>
+            <PropertyRef Name="Account_No" />
+          </Key>
+          <Property Name="Account_No" Type="Int32" Nullable="false" />
+          <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Marital_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State_Of_Origin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mother_Maiden_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Residential_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Emergency_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emergency_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Date_Of_Registration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Edited" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Staff_On_Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BankingPModelStoreContainer" CdmEntityContainer="BankingPEntities1">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="BankingPModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="staffAccount1">
+            <EntityTypeMapping TypeName="BankingPModel.staffAccount1">
+              <MappingFragment StoreEntitySet="staffAccount1">
+                <ScalarProperty Name="Last_Edited" ColumnName="Last_Edited" />
+                <ScalarProperty Name="Date_Of_Registration" ColumnName="Date_Of_Registration" />
+                <ScalarProperty Name="Emergency_Phone_No" ColumnName="Emergency_Phone_No" />
+                <ScalarProperty Name="Emergency_Name" ColumnName="Emergency_Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Residential_Address" ColumnName="Residential_Address" />
+                <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+                <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+                <ScalarProperty Name="Mother_Maiden_Name" ColumnName="Mother_Maiden_Name" />
+                <ScalarProperty Name="State_Of_Origin" ColumnName="State_Of_Origin" />
+                <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="staffId" ColumnName="staffId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deposits">
+            <EntityTypeMapping TypeName="BankingPModel.Deposit">
+              <MappingFragment StoreEntitySet="Deposit">
+                <ScalarProperty Name="Date_Of_Deposit" ColumnName="Date_Of_Deposit" />
+                <ScalarProperty Name="Cheque_No" ColumnName="Cheque_No" />
+                <ScalarProperty Name="Staff_On_Duty" ColumnName="Staff_On_Duty" />
+                <ScalarProperty Name="Depositor_Phone_No" ColumnName="Depositor_Phone_No" />
+                <ScalarProperty Name="Depositor_Name" ColumnName="Depositor_Name" />
+                <ScalarProperty Name="Deposit_Amount" ColumnName="Deposit_Amount" />
+                <ScalarProperty Name="Deposit_Type" ColumnName="Deposit_Type" />
+                <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+                <ScalarProperty Name="Previous_Balance" ColumnName="Previous_Balance" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Serial_No" ColumnName="Serial_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Withdrawals">
+            <EntityTypeMapping TypeName="BankingPModel.Withdrawal">
+              <MappingFragment StoreEntitySet="Withdrawal">
+                <ScalarProperty Name="Cheque_Bearer_Picture" ColumnName="Cheque_Bearer_Picture" />
+                <ScalarProperty Name="Withdrawal_Slip_No" ColumnName="Withdrawal_Slip_No" />
+                <ScalarProperty Name="Cheque_Bearer" ColumnName="Cheque_Bearer" />
+                <ScalarProperty Name="Cheque_No" ColumnName="Cheque_No" />
+                <ScalarProperty Name="Staff_On_Duty" ColumnName="Staff_On_Duty" />
+                <ScalarProperty Name="Date_Of_Withrawal" ColumnName="Date_Of_Withrawal" />
+                <ScalarProperty Name="Withdrawal_Amount" ColumnName="Withdrawal_Amount" />
+                <ScalarProperty Name="Withdrawal_Type" ColumnName="Withdrawal_Type" />
+                <ScalarProperty Name="Previous_Balance" ColumnName="Previous_Balance" />
+                <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+                <ScalarProperty Name="Serial_No" ColumnName="Serial_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customerAccounts">
+            <EntityTypeMapping TypeName="BankingPModel.customerAccount">
+              <MappingFragment StoreEntitySet="customerAccount">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Staff_On_Duty" ColumnName="Staff_On_Duty" />
+                <ScalarProperty Name="Last_Edited" ColumnName="Last_Edited" />
+                <ScalarProperty Name="Date_Of_Registration" ColumnName="Date_Of_Registration" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Emergency_No" ColumnName="Emergency_No" />
+                <ScalarProperty Name="Emergency_Name" ColumnName="Emergency_Name" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Residential_Address" ColumnName="Residential_Address" />
+                <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+                <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+                <ScalarProperty Name="Mother_Maiden_Name" ColumnName="Mother_Maiden_Name" />
+                <ScalarProperty Name="State_Of_Origin" ColumnName="State_Of_Origin" />
+                <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
