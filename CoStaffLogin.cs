@@ -4,15 +4,20 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Button = System.Windows.Forms.Button;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace BankApp
 {
     public partial class CoStaffLogin : Form
     {
-
+        public static CoStaffLogin instance;
+        public TextBox getStaffId;
         private void renderLeftPanel()
         {
 
@@ -98,7 +103,7 @@ namespace BankApp
 
             // 'login to admin' label
             Label label3 = new Label();
-            label3.Text = "Login to admin account";
+            label3.Text = "Login to staff account";
             label3.Location = new Point(38, 135);
             label3.Size = new Size(257, 24);
             label3.Font = new Font("Century Gothic", 15);
@@ -288,11 +293,23 @@ namespace BankApp
                 userNamePanel.BackColor = SystemColors.Control;
             };
 
+            // textbox for getting staffId
+            TextBox staffIdHolder = new TextBox();
+            staffIdHolder.Size = new Size(72, 20);
+            staffIdHolder.Location = new Point(186, 349);
+            staffIdHolder.ForeColor = Color.Teal;
+            staffIdHolder.BorderStyle = BorderStyle.None;
+            staffIdHolder.BackColor = SystemColors.Control;
+            staffIdHolder.Font = new Font("Century Gothic", 10);
+            staffIdHolder.Visible = false;
+            this.Controls.Add(staffIdHolder);
+            getStaffId = staffIdHolder;
+
 
             // code for when button is clicked
             loginButton.Click += (sender, args) =>
             {
-                BankingPEntities1 dbe = new BankingPEntities1();
+                BankingPEntities5 dbe = new BankingPEntities5();
                 if (userName.Text != string.Empty || passWord.Text != string.Empty)
                 {
                     var user1 = dbe.staffAccount1.FirstOrDefault(a => a.Username.Equals(userName.Text));
@@ -300,8 +317,9 @@ namespace BankApp
                     {
                         if (user1.Password.Equals(passWord.Text))
                         {
-                            AdminHome adminhomepage = new AdminHome();
-                            adminhomepage.Show();
+                            staffIdHolder.Text = user1.staffId.ToString();
+                            StaffHome staffhomepage = new StaffHome();
+                            staffhomepage.Show();
                             Visible = false;
                         }
                         else
@@ -335,6 +353,7 @@ namespace BankApp
         public CoStaffLogin()
         {
             InitializeComponent();
+            instance = this;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Size = new Size(750, 530);
             renderRightPanel();

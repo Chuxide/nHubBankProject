@@ -236,6 +236,7 @@
             this.searchAccountNoTxt.Name = "searchAccountNoTxt";
             this.searchAccountNoTxt.Size = new System.Drawing.Size(87, 14);
             this.searchAccountNoTxt.TabIndex = 131;
+            this.searchAccountNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchAccountNoTxt_KeyPress);
             // 
             // staffOnDutyTxt
             // 
@@ -257,6 +258,7 @@
             this.chequeNoTxt.Size = new System.Drawing.Size(116, 14);
             this.chequeNoTxt.TabIndex = 132;
             this.chequeNoTxt.Visible = false;
+            this.chequeNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.chequeNoTxt_KeyPress);
             // 
             // depositorPhoneNoTxt
             // 
@@ -266,6 +268,7 @@
             this.depositorPhoneNoTxt.Name = "depositorPhoneNoTxt";
             this.depositorPhoneNoTxt.Size = new System.Drawing.Size(157, 14);
             this.depositorPhoneNoTxt.TabIndex = 132;
+            this.depositorPhoneNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.depositorPhoneNoTxt_KeyPress);
             // 
             // depositorNameTxt
             // 
@@ -284,6 +287,7 @@
             this.depositAmountTxt.Name = "depositAmountTxt";
             this.depositAmountTxt.Size = new System.Drawing.Size(178, 14);
             this.depositAmountTxt.TabIndex = 132;
+            this.depositAmountTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.depositAmountTxt_KeyPress);
             // 
             // genderTxt
             // 

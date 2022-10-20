@@ -14,7 +14,7 @@ namespace BankApp
 {
     public partial class WithdrawalPage : UserControl
     {
-        BankingPEntities1 dbe;
+        BankingPEntities5 dbe;
         MemoryStream ms;
         string withdrawalType = string.Empty;
 
@@ -23,6 +23,7 @@ namespace BankApp
         {
             InitializeComponent();
             dateLabel.Text = DateTime.Now.ToLongDateString();
+            staffOnDutyTxt.Text = CoAdminLogin.instance.getAdminId.Text;
         }
 
 
@@ -30,7 +31,7 @@ namespace BankApp
         // retrieving customer account info
         private void searchButton_Click(object sender, EventArgs e)
         {
-            dbe = new BankingPEntities1();
+            dbe = new BankingPEntities5();
             int accountNoSearch = Convert.ToInt32(searchAccountNoTxt.Text);
             var item = dbe.customerAccounts.Where(a => a.Account_No == accountNoSearch).FirstOrDefault();
             if (item == null)
@@ -47,11 +48,12 @@ namespace BankApp
 
                 accountNoTxt.Text = item.Account_No.ToString();
 
+               
 
 
                 byte[] img = item.Picture;
-                MemoryStream ms = new MemoryStream(img);
-                pictureBox1.Image = Image.FromStream(ms);
+                MemoryStream ms1 = new MemoryStream(img);
+                pictureBox1.Image = Image.FromStream(ms1);
 
             }
 
@@ -88,6 +90,16 @@ namespace BankApp
             {
                 MessageBox.Show("Please enter the withdrawal slip number.");
             }
+            else if (chequeRadioButton.Checked == true && ms == null)
+            {
+                errorUpload.Visible = true;
+                MessageBox.Show("Please upload a picture for the cheque bearer.");
+            }
+            else if (Convert.ToInt32(withdrawalAmountTxt.Text) > Convert.ToDecimal(balanceTxt.Text))
+            {
+                MessageBox.Show("Insufficient balance to perform this transaction.");
+
+            }
 
 
             else
@@ -101,30 +113,45 @@ namespace BankApp
                 else if (chequeRadioButton.Checked)
                 {
                     withdrawalType = "Cheque";
-                    withdrawalSlipNoTxt.Text = Convert.ToString(0);
+                    withdrawalSlipNoTxt.Text = "NIL";
+                    
                 }
 
 
 
 
 
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
                 Withdrawal withdraw = new Withdrawal();
 
                 withdraw.Account_No = Convert.ToInt32(accountNoTxt.Text);
-                withdraw.Name = nameTxt.Text;
+                withdraw.Customer_Name = nameTxt.Text;
                 withdraw.Phone_No = phoneNoTxt.Text;
                 withdraw.Previous_Balance = Convert.ToDecimal(balanceTxt.Text);
                 withdraw.Withdrawal_Amount = Convert.ToInt32(withdrawalAmountTxt.Text);
                 withdraw.Cheque_Bearer = chequeBearerTxt.Text;
                 withdraw.Cheque_No = chequeNoTxt.Text;
-                withdraw.Withdrawal_Slip_No = Convert.ToInt32(withdrawalSlipNoTxt.Text);
-                withdraw.Date_Of_Withrawal = dateLabel.Text;
+                withdraw.Withdrawal_Slip_No = withdrawalSlipNoTxt.Text;
+                withdraw.Date_Of_Withdrawal = dateLabel.Text;
                 withdraw.Withdrawal_Type = withdrawalType;
                 withdraw.Staff_On_Duty = staffOnDutyTxt.Text;
+                withdraw.New_Balance = Convert.ToDecimal(balanceTxt.Text) - Convert.ToInt32(withdrawalAmountTxt.Text);
+
+                if (withdrawalSlipRadioButton.Checked)
+                {
+                    withdraw.Cheque_Bearer_Picture = null;
+                }
+                else if (chequeRadioButton.Checked)
+                {
+                    withdraw.Cheque_Bearer_Picture = ms.ToArray();
+                } 
+                
+                
 
                 dbe.Withdrawals.Add(withdraw);
                 dbe.SaveChanges();
+
+
 
                 int b = Convert.ToInt32(accountNoTxt.Text);
                 var item = (from u in dbe.customerAccounts
@@ -178,6 +205,9 @@ namespace BankApp
             errorwithdrawalSlipNoLabel.Visible = true;
             withdrawalSlipNoLabel.Visible = true;
 
+            pictureBox2.Visible = false;
+            uploadBtn.Visible = false;
+
             chequeBearerTxt.Clear();
             chequeNoTxt.Clear();
 
@@ -197,6 +227,9 @@ namespace BankApp
             errorwithdrawalSlipNoLabel.Visible = false;
             withdrawalSlipNoLabel.Visible = false;
 
+            pictureBox2.Visible = true;
+            uploadBtn.Visible = true;
+
             withdrawalSlipNoTxt.Clear();
         }
 
@@ -214,6 +247,52 @@ namespace BankApp
         private void withdrawalPagePanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void withdrawalSlipNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl (e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void chequeNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void searchAccountNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void uploadBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+            if (openDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                Image img = Image.FromFile(openDialog.FileName);
+                pictureBox2.Image = img;
+                ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+            }
+        }
+
+
+        private void viewWithdrawalRecordsBtn_Click(object sender, EventArgs e)
+        {
+            withdrawalPagePanel.BringToFront();
+
+            AllWithdrawalRecords withdrawpage = new AllWithdrawalRecords();
+            addUserControl(withdrawpage);
         }
     }
 }

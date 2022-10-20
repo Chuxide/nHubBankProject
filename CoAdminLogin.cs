@@ -36,12 +36,23 @@ namespace BankApp
 
             // 'welcome to the bank management system' labels 
             Label label = new Label();
-            label.Text = "Welcome to the";
+            label.Text = "Welcome to the Bank Management System";
             label.Location = new Point(92, 285);
-            label.Size = new Size(178, 24);
+            label.Size = new Size(167, 23);
             label.Font = new Font("Century Gothic", 15);
             label.ForeColor = Color.White;
             leftPanel.Controls.Add(label);
+
+             /* Label label = new Label();
+              label.Text = "Welcome to the Bank Management System";
+              label.Location = new Point(92, 285);
+              label.AutoSize = true;
+              label.MaximumSize = new Size(200, 200);
+              label.TextAlign = ContentAlignment.TopRight;
+
+              label.Font = new Font("Century Gothic", 15);
+              label.ForeColor = Color.White;
+              leftPanel.Controls.Add(label); */
 
             Label label1 = new Label();
             label1.Text = "Bank Management";
@@ -305,7 +316,7 @@ namespace BankApp
             // code for when button is clicked
             loginButton.Click += (sender, args) =>
             {
-                BankingPEntities1 dbe = new BankingPEntities1();
+                BankingPEntities5 dbe = new BankingPEntities5();
                 if (userName.Text != string.Empty || passWord.Text != string.Empty)
                 {
                     var user1 = dbe.Admins.FirstOrDefault(a => a.Username.Equals(userName.Text));

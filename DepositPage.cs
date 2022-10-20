@@ -14,7 +14,7 @@ namespace BankApp
     public partial class DepositPage : UserControl
     {
 
-        BankingPEntities1 dbe;
+        BankingPEntities5 dbe;
         MemoryStream ms;
         string depositType = string.Empty;
 
@@ -30,7 +30,7 @@ namespace BankApp
         // retrieving customer account info
         private void searchButton_Click(object sender, EventArgs e)
         {
-            dbe = new BankingPEntities1();
+            dbe = new BankingPEntities5();
             int accountNoSearch = Convert.ToInt32(searchAccountNoTxt.Text);
             var item = dbe.customerAccounts.Where(a => a.Account_No == accountNoSearch).FirstOrDefault();
             if (item == null)
@@ -46,7 +46,7 @@ namespace BankApp
                 balanceTxt.Text = item.Balance.ToString();
 
                 accountNoTxt.Text = item.Account_No.ToString();
-
+                
 
 
                 byte[] img = item.Picture;
@@ -99,7 +99,7 @@ namespace BankApp
                 
 
 
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
                 Deposit deposit = new Deposit();
 
                 deposit.Account_No = Convert.ToInt32(accountNoTxt.Text);
@@ -113,6 +113,8 @@ namespace BankApp
                 deposit.Date_Of_Deposit = dateLabel.Text;
                 deposit.Deposit_Type = depositType;
                 deposit.Staff_On_Duty = staffOnDutyTxt.Text;
+                deposit.New_Balance = Convert.ToDecimal(balanceTxt.Text) + Convert.ToDecimal(depositAmountTxt.Text);
+
 
                 dbe.Deposits.Add(deposit);
                 dbe.SaveChanges();
@@ -187,6 +189,38 @@ namespace BankApp
 
             AllDepositRecords depositrecordspage = new AllDepositRecords();
             addUserControl(depositrecordspage);
+        }
+
+        private void chequeNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void searchAccountNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void depositAmountTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void depositorPhoneNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

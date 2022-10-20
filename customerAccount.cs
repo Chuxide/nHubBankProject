@@ -32,6 +32,6 @@ namespace BankApp
         public string Date_Of_Registration { get; set; }
         public string Last_Edited { get; set; }
         public string Staff_On_Duty { get; set; }
-        public int Id { get; set; }
+        public Nullable<int> Id { get; set; }
     }
 }

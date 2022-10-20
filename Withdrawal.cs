@@ -16,16 +16,17 @@ namespace BankApp
     {
         public int Serial_No { get; set; }
         public Nullable<int> Account_No { get; set; }
-        public string Name { get; set; }
+        public string Customer_Name { get; set; }
         public string Phone_No { get; set; }
         public Nullable<decimal> Previous_Balance { get; set; }
         public string Withdrawal_Type { get; set; }
         public Nullable<decimal> Withdrawal_Amount { get; set; }
-        public string Date_Of_Withrawal { get; set; }
+        public string Date_Of_Withdrawal { get; set; }
         public string Staff_On_Duty { get; set; }
         public string Cheque_No { get; set; }
         public string Cheque_Bearer { get; set; }
-        public Nullable<int> Withdrawal_Slip_No { get; set; }
+        public string Withdrawal_Slip_No { get; set; }
         public byte[] Cheque_Bearer_Picture { get; set; }
+        public Nullable<decimal> New_Balance { get; set; }
     }
 }

@@ -64,12 +64,12 @@ namespace BankApp
             homebuttonPanel.Controls.Add(slidePanel);
             // home button
             Button homeButton = new Button();
-            homeButton.Text = "HOME";
+            homeButton.Text = "Home";
             homeButton.Location = new Point(0, 0);
             homeButton.Size = new Size(163, 44);
             homeButton.ForeColor = Color.White;
             homeButton.BackColor = Color.SlateGray;
-            homeButton.Font = new Font("Comic Sans MS", 9);
+            homeButton.Font = new Font("Comic Sans MS", 11);
             homeButton.FlatStyle = FlatStyle.Flat;
             homeButton.FlatAppearance.BorderSize = 0;
             homebuttonPanel.Controls.Add(homeButton);
@@ -95,12 +95,12 @@ namespace BankApp
             staffContainer.Controls.Add(slidePanelStaff);
             // staff button
             Button staffButton = new Button();
-            staffButton.Text = "STAFF";
+            staffButton.Text = "Staff";
             staffButton.Location = new Point(0, 0);
             staffButton.Size = new Size(163, 44);
             staffButton.ForeColor = Color.White;
             staffButton.BackColor = Color.SlateGray;
-            staffButton.Font = new Font("Comic Sans MS", 9);
+            staffButton.Font = new Font("Comic Sans MS", 11);
             staffButton.FlatStyle = FlatStyle.Flat;
             staffButton.FlatAppearance.BorderSize = 0;
             staffContainer.Controls.Add(staffButton);
@@ -160,12 +160,12 @@ namespace BankApp
             customerContainer.Controls.Add(slidePanelCustomer);
             // customer button
             Button customerButton = new Button();
-            customerButton.Text = "CUSTOMER";
+            customerButton.Text = "Customer";
             customerButton.Location = new Point(0, 0);
             customerButton.Size = new Size(163, 44);
             customerButton.ForeColor = Color.White;
             customerButton.BackColor = Color.SlateGray;
-            customerButton.Font = new Font("Comic Sans MS", 9);
+            customerButton.Font = new Font("Comic Sans MS", 11);
             customerButton.FlatStyle = FlatStyle.Flat;
             customerButton.FlatAppearance.BorderSize = 0;
             customerContainer.Controls.Add(customerButton);
@@ -210,7 +210,7 @@ namespace BankApp
             // panel for transactions button
             Panel transactionsContainer = new Panel();
             transactionsContainer.Size = new Size(163, 44);
-            transactionsContainer.MaximumSize = new Size(163, 142);
+            transactionsContainer.MaximumSize = new Size(163, 111);
             transactionsContainer.MinimumSize = new Size(163, 44);
             transactionsContainer.BorderStyle = BorderStyle.None;
             transactionsContainer.Location = new Point(0, 272);
@@ -224,12 +224,12 @@ namespace BankApp
             transactionsContainer.Controls.Add(slidePanelTransactions);
             // transactions button
             Button transactionsButton = new Button();
-            transactionsButton.Text = "TRANSACTIONS";
+            transactionsButton.Text = "Transactions";
             transactionsButton.Location = new Point(0, 0);
             transactionsButton.Size = new Size(163, 44);
             transactionsButton.ForeColor = Color.White;
             transactionsButton.BackColor = Color.SlateGray;
-            transactionsButton.Font = new Font("Comic Sans MS", 9);
+            transactionsButton.Font = new Font("Comic Sans MS", 11);
             transactionsButton.FlatStyle = FlatStyle.Flat;
             transactionsButton.FlatAppearance.BorderSize = 0;
             transactionsContainer.Controls.Add(transactionsButton);
@@ -255,17 +255,6 @@ namespace BankApp
             withdrawButton.FlatStyle = FlatStyle.Flat;
             withdrawButton.FlatAppearance.BorderSize = 0;
             transactionsContainer.Controls.Add(withdrawButton);
-            // transferButton
-            Button transferButton = new Button();
-            transferButton.Text = "Transfer";
-            transferButton.Location = new Point(0, 108);
-            transferButton.Size = new Size(163, 34);
-            transferButton.ForeColor = Color.White;
-            transferButton.BackColor = Color.FromArgb(64, 64, 64);
-            transferButton.Font = new Font("Comic Sans MS", 9);
-            transferButton.FlatStyle = FlatStyle.Flat;
-            transferButton.FlatAppearance.BorderSize = 0;
-            transactionsContainer.Controls.Add(transferButton);
 
             leftPanel.Controls.Add(transactionsContainer);
             
@@ -285,12 +274,12 @@ namespace BankApp
             balanceSheetContainer.Controls.Add(slidePanelBalanceSheet);
             // balance sheet button
             Button balanceSheetButton = new Button();
-            balanceSheetButton.Text = "BALANCE SHEET";
+            balanceSheetButton.Text = "Balance Sheet";
             balanceSheetButton.Location = new Point(0, 0);
             balanceSheetButton.Size = new Size(163, 44);
             balanceSheetButton.ForeColor = Color.White;
             balanceSheetButton.BackColor = Color.SlateGray;
-            balanceSheetButton.Font = new Font("Comic Sans MS", 9);
+            balanceSheetButton.Font = new Font("Comic Sans MS", 11);
             balanceSheetButton.FlatStyle = FlatStyle.Flat;
             balanceSheetButton.FlatAppearance.BorderSize = 0;
             balanceSheetContainer.Controls.Add(balanceSheetButton);
@@ -302,7 +291,7 @@ namespace BankApp
             // panel for profile settings button
             Panel profileSettingsContainer = new Panel();
             profileSettingsContainer.Size = new Size(163, 44);
-            profileSettingsContainer.MaximumSize = new Size(163, 142);
+            profileSettingsContainer.MaximumSize = new Size(163, 111);
             profileSettingsContainer.MinimumSize = new Size(163, 44);
             profileSettingsContainer.BorderStyle = BorderStyle.None;
             profileSettingsContainer.Location = new Point(0, 370);
@@ -316,15 +305,37 @@ namespace BankApp
             profileSettingsContainer.Controls.Add(slidePanelProfileSettings);
             // profile settings button
             Button profileSettingsButton = new Button();
-            profileSettingsButton.Text = "PROFILE SETTINGS";
+            profileSettingsButton.Text = "Settings";
             profileSettingsButton.Location = new Point(0, 0);
             profileSettingsButton.Size = new Size(163, 44);
             profileSettingsButton.ForeColor = Color.White;
             profileSettingsButton.BackColor = Color.SlateGray;
-            profileSettingsButton.Font = new Font("Comic Sans MS", 9);
+            profileSettingsButton.Font = new Font("Comic Sans MS", 11);
             profileSettingsButton.FlatStyle = FlatStyle.Flat;
             profileSettingsButton.FlatAppearance.BorderSize = 0;
             profileSettingsContainer.Controls.Add(profileSettingsButton);
+            // resetPasswordButton
+            Button resetPasswordButtonn = new Button();
+            resetPasswordButtonn.Text = "Reset Password";
+            resetPasswordButtonn.Location = new Point(0, 43);
+            resetPasswordButtonn.Size = new Size(163, 34);
+            resetPasswordButtonn.ForeColor = Color.White;
+            resetPasswordButtonn.BackColor = Color.FromArgb(64, 64, 64);
+            resetPasswordButtonn.Font = new Font("Comic Sans MS", 9);
+            resetPasswordButtonn.FlatStyle = FlatStyle.Flat;
+            resetPasswordButtonn.FlatAppearance.BorderSize = 0;
+            profileSettingsContainer.Controls.Add(resetPasswordButtonn);
+            // logoutButton
+            Button logOutButton = new Button();
+            logOutButton.Text = "Log Out";
+            logOutButton.Location = new Point(0, 76);
+            logOutButton.Size = new Size(163, 34);
+            logOutButton.ForeColor = Color.White;
+            logOutButton.BackColor = Color.FromArgb(64, 64, 64);
+            logOutButton.Font = new Font("Comic Sans MS", 9);
+            logOutButton.FlatStyle = FlatStyle.Flat;
+            logOutButton.FlatAppearance.BorderSize = 0;
+            profileSettingsContainer.Controls.Add(logOutButton);
 
             leftPanel.Controls.Add(profileSettingsContainer);
 
@@ -403,7 +414,6 @@ namespace BankApp
                     {
                         transactionsCollapsed = false;
                         balanceSheetContainer.Visible = false;
-                        profileSettingsContainer.Visible = false;
                         transactionsTimer.Stop();
                     }
                 }
@@ -604,9 +614,56 @@ namespace BankApp
                 bottomPanel.Controls.Add(withdrawalpage);
                 bottomPanel.BringToFront();
             };
-            // transfer button click
-            transferButton.Click += (sender, args) =>
+            
+
+
+            // balance sheet button click
+            balanceSheetButton.Click += (sender, args) =>
             {
+                slidePanel.Visible = false;
+                slidePanelStaff.Visible = false;
+                slidePanelCustomer.Visible = false;
+                slidePanelTransactions.Visible = false;
+                slidePanelBalanceSheet.Visible = true;
+                slidePanelProfileSettings.Visible = false;
+
+                BalanceSheet balancesheetpage = new BalanceSheet();
+                bottomPanel.Controls.Clear();
+                bottomPanel.Controls.Add(balancesheetpage);
+                bottomPanel.BringToFront();
+            };
+
+
+            // profile settings button click
+            profileSettingsButton.Click += (sender, args) =>
+            {
+                profileSettingsTimer.Start();
+                slidePanel.Visible = false;
+                slidePanelStaff.Visible = false;
+                slidePanelCustomer.Visible = false;
+                slidePanelTransactions.Visible = false;
+                slidePanelBalanceSheet.Visible = false;
+                slidePanelProfileSettings.Visible = true;
+
+                ProfileSettingsPage profilepage = new ProfileSettingsPage();
+                bottomPanel.Controls.Clear();
+                bottomPanel.Controls.Add(profilepage);
+                bottomPanel.BringToFront();
+            };
+            // logout button click
+            logOutButton.Click += (sender, args) =>
+            {
+                CoStaffLogin staff = new CoStaffLogin();
+                staff.Show();
+                Visible = false;
+            };
+            // reset password button click
+            resetPasswordButtonn.Click += (sender, args) =>
+            {
+                ChangePassword_Admin changepasswordpage = new ChangePassword_Admin();
+                bottomPanel.Controls.Clear();
+                bottomPanel.Controls.Add(changepasswordpage);
+                bottomPanel.BringToFront();
 
             };
 
@@ -742,7 +799,7 @@ namespace BankApp
 
             // label for representing the admin Id
             Label adminIdLabel = new Label();
-       //     adminIdLabel.Text = CoAdminLogin.instance.getAdminId.Text;
+            adminIdLabel.Text = CoAdminLogin.instance.getAdminId.Text;
             adminIdLabel.Location = new Point(483, 30);
             adminIdLabel.Size = new Size(50, 13);
             adminIdLabel.Font = new Font("Comic Sans MS", 8, FontStyle.Bold);

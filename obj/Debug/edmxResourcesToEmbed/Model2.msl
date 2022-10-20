@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BankingPModel1StoreContainer" CdmEntityContainer="BankingPEntities2">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="BankingPModel1.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffAccount1">
+      <EntityTypeMapping TypeName="BankingPModel1.staffAccount1">
+        <MappingFragment StoreEntitySet="staffAccount1">
+          <ScalarProperty Name="Last_Edited" ColumnName="Last_Edited" />
+          <ScalarProperty Name="Date_Of_Registration" ColumnName="Date_Of_Registration" />
+          <ScalarProperty Name="Emergency_Phone_No" ColumnName="Emergency_Phone_No" />
+          <ScalarProperty Name="Emergency_Name" ColumnName="Emergency_Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Residential_Address" ColumnName="Residential_Address" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Mother_Maiden_Name" ColumnName="Mother_Maiden_Name" />
+          <ScalarProperty Name="State_Of_Origin" ColumnName="State_Of_Origin" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customerAccounts">
+      <EntityTypeMapping TypeName="BankingPModel1.customerAccount">
+        <MappingFragment StoreEntitySet="customerAccount">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Staff_On_Duty" ColumnName="Staff_On_Duty" />
+          <ScalarProperty Name="Last_Edited" ColumnName="Last_Edited" />
+          <ScalarProperty Name="Date_Of_Registration" ColumnName="Date_Of_Registration" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Emergency_No" ColumnName="Emergency_No" />
+          <ScalarProperty Name="Emergency_Name" ColumnName="Emergency_Name" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Residential_Address" ColumnName="Residential_Address" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Mother_Maiden_Name" ColumnName="Mother_Maiden_Name" />
+          <ScalarProperty Name="State_Of_Origin" ColumnName="State_Of_Origin" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deposits">
+      <EntityTypeMapping TypeName="BankingPModel1.Deposit">
+        <MappingFragment StoreEntitySet="Deposit">
+          <ScalarProperty Name="Date_Of_Deposit" ColumnName="Date_Of_Deposit" />
+          <ScalarProperty Name="Cheque_No" ColumnName="Cheque_No" />
+          <ScalarProperty Name="Staff_On_Duty" ColumnName="Staff_On_Duty" />
+          <ScalarProperty Name="Depositor_Phone_No" ColumnName="Depositor_Phone_No" />
+          <ScalarProperty Name="Depositor_Name" ColumnName="Depositor_Name" />
+          <ScalarProperty Name="Deposit_Amount" ColumnName="Deposit_Amount" />
+          <ScalarProperty Name="Deposit_Type" ColumnName="Deposit_Type" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+          <ScalarProperty Name="Previous_Balance" ColumnName="Previous_Balance" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Serial_No" ColumnName="Serial_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Withdrawals">
+      <EntityTypeMapping TypeName="BankingPModel1.Withdrawal">
+        <MappingFragment StoreEntitySet="Withdrawal">
+          <ScalarProperty Name="Cheque_Bearer_Picture" ColumnName="Cheque_Bearer_Picture" />
+          <ScalarProperty Name="Withdrawal_Slip_No" ColumnName="Withdrawal_Slip_No" />
+          <ScalarProperty Name="Cheque_Bearer" ColumnName="Cheque_Bearer" />
+          <ScalarProperty Name="Cheque_No" ColumnName="Cheque_No" />
+          <ScalarProperty Name="Staff_On_Duty" ColumnName="Staff_On_Duty" />
+          <ScalarProperty Name="Date_Of_Withdrawal" ColumnName="Date_Of_Withdrawal" />
+          <ScalarProperty Name="Withdrawal_Amount" ColumnName="Withdrawal_Amount" />
+          <ScalarProperty Name="Withdrawal_Type" ColumnName="Withdrawal_Type" />
+          <ScalarProperty Name="Previous_Balance" ColumnName="Previous_Balance" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+          <ScalarProperty Name="Serial_No" ColumnName="Serial_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

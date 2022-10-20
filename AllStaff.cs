@@ -21,7 +21,7 @@ namespace BankApp
 
         private void bindgrid()
         {
-            BankingPEntities1 bs = new BankingPEntities1();
+            BankingPEntities5 bs = new BankingPEntities5();
             var item = bs.staffAccount1.ToList();
             dataGridView1.DataSource = item;
 

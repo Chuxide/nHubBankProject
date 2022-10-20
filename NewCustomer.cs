@@ -16,7 +16,7 @@ namespace BankApp
         string gender = string.Empty;
         string m_status = string.Empty;
         int no;
-        BankingPEntities1 BSE;
+        BankingPEntities5 BSE;
         MemoryStream ms;
 
         public NewCustomer()
@@ -31,7 +31,7 @@ namespace BankApp
 
         private void loadStaff()
         {
-            BSE = new BankingPEntities1();
+            BSE = new BankingPEntities5();
             var item = BSE.customerAccounts.ToArray();
             no = item.LastOrDefault().Account_No + 1;
             accountNoTxt.Text = Convert.ToString(no);
@@ -165,7 +165,7 @@ namespace BankApp
 
                     
 
-                    BSE = new BankingPEntities1();
+                    BSE = new BankingPEntities5();
                     customerAccount customer = new customerAccount();
                     customer.Account_No = no;
                     customer.First_Name = firstNameTxt.Text;
@@ -240,6 +240,22 @@ namespace BankApp
 
             NewCustomer newcustomerpage = new NewCustomer();
             addUserControl(newcustomerpage);
+        }
+
+        private void emergencyPhoneNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void phoneNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ namespace BankApp
     public partial class EditStaff : UserControl
     {
 
-        BankingPEntities1 dbe;
+        BankingPEntities5 dbe;
         MemoryStream ms;
         BindingList<staffAccount1> bi;
         string gender = string.Empty;
@@ -80,7 +80,7 @@ namespace BankApp
             try
             {
                 bi = new BindingList<staffAccount1>();
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
                 int staffIdSearch = Convert.ToInt32(searchStaffIdTxt.Text);
                 var item = dbe.staffAccount1.Where(a => a.staffId == staffIdSearch).FirstOrDefault();
                 if (item == null)
@@ -168,7 +168,7 @@ namespace BankApp
             }
             else
             {
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
                 string b = staffIdTxt.Text.Substring(2);
                 int a = Convert.ToInt32(b);
                 staffAccount1 selectedStaff = dbe.staffAccount1.First(s => s.staffId.Equals(a));
@@ -252,7 +252,7 @@ namespace BankApp
                     m_status = "Divorced";
                 }
 
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
                 
                 string b = staffIdTxt.Text.Substring(2);
                 int a = Convert.ToInt32(b);
@@ -261,7 +261,7 @@ namespace BankApp
                 dbe.SaveChanges();
 
 
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
                 staffAccount1 staff = new staffAccount1();
                 staff.staffId = a;
                 staff.First_Name = firstNameTxt.Text;
@@ -293,6 +293,30 @@ namespace BankApp
                 // Visible = false;
 
                 MessageBox.Show("The staff account with id: " + staffIdTxt.Text + " has been edited successfully!");
+            }
+        }
+
+        private void searchStaffIdTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void emergencyPhoneNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void phoneNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

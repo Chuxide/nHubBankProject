@@ -26,5 +26,6 @@ namespace BankApp
         public string Staff_On_Duty { get; set; }
         public string Cheque_No { get; set; }
         public string Date_Of_Deposit { get; set; }
+        public Nullable<decimal> New_Balance { get; set; }
     }
 }

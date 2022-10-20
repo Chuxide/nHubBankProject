@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditStaff));
             this.editStaffPanel = new System.Windows.Forms.Panel();
+            this.searchButton = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -37,7 +38,9 @@
             this.femaleRadioButton = new System.Windows.Forms.RadioButton();
             this.addressTxt = new System.Windows.Forms.TextBox();
             this.emailIdTxt = new System.Windows.Forms.TextBox();
+            this.lastEditedTxt = new System.Windows.Forms.TextBox();
             this.passwordTxt = new System.Windows.Forms.TextBox();
+            this.dateOfRegistrationTxt = new System.Windows.Forms.TextBox();
             this.userNameTxt = new System.Windows.Forms.TextBox();
             this.emergencyPhoneNoTxt = new System.Windows.Forms.TextBox();
             this.emergencyNameTxt = new System.Windows.Forms.TextBox();
@@ -50,12 +53,15 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.uploadButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.divorcedRadioButton = new System.Windows.Forms.RadioButton();
             this.singleRadioButton = new System.Windows.Forms.RadioButton();
             this.marriedRadioButton = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -78,15 +84,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.searchButton = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.dateOfRegistrationTxt = new System.Windows.Forms.TextBox();
-            this.lastEditedTxt = new System.Windows.Forms.TextBox();
             this.editStaffPanel.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchButton)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +148,18 @@
             this.editStaffPanel.Name = "editStaffPanel";
             this.editStaffPanel.Size = new System.Drawing.Size(587, 401);
             this.editStaffPanel.TabIndex = 0;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
+            this.searchButton.Location = new System.Drawing.Point(363, 33);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(20, 16);
+            this.searchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.searchButton.TabIndex = 54;
+            this.searchButton.TabStop = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // panel1
             // 
@@ -220,6 +232,17 @@
             this.emailIdTxt.Size = new System.Drawing.Size(239, 14);
             this.emailIdTxt.TabIndex = 41;
             // 
+            // lastEditedTxt
+            // 
+            this.lastEditedTxt.BackColor = System.Drawing.Color.White;
+            this.lastEditedTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lastEditedTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastEditedTxt.Location = new System.Drawing.Point(414, 347);
+            this.lastEditedTxt.Name = "lastEditedTxt";
+            this.lastEditedTxt.ReadOnly = true;
+            this.lastEditedTxt.Size = new System.Drawing.Size(159, 14);
+            this.lastEditedTxt.TabIndex = 42;
+            // 
             // passwordTxt
             // 
             this.passwordTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -228,6 +251,17 @@
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(183, 14);
             this.passwordTxt.TabIndex = 42;
+            // 
+            // dateOfRegistrationTxt
+            // 
+            this.dateOfRegistrationTxt.BackColor = System.Drawing.Color.White;
+            this.dateOfRegistrationTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dateOfRegistrationTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateOfRegistrationTxt.Location = new System.Drawing.Point(414, 327);
+            this.dateOfRegistrationTxt.Name = "dateOfRegistrationTxt";
+            this.dateOfRegistrationTxt.ReadOnly = true;
+            this.dateOfRegistrationTxt.Size = new System.Drawing.Size(159, 14);
+            this.dateOfRegistrationTxt.TabIndex = 43;
             // 
             // userNameTxt
             // 
@@ -246,6 +280,7 @@
             this.emergencyPhoneNoTxt.Name = "emergencyPhoneNoTxt";
             this.emergencyPhoneNoTxt.Size = new System.Drawing.Size(183, 14);
             this.emergencyPhoneNoTxt.TabIndex = 44;
+            this.emergencyPhoneNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emergencyPhoneNoTxt_KeyPress);
             // 
             // emergencyNameTxt
             // 
@@ -265,6 +300,7 @@
             this.searchStaffIdTxt.Name = "searchStaffIdTxt";
             this.searchStaffIdTxt.Size = new System.Drawing.Size(89, 14);
             this.searchStaffIdTxt.TabIndex = 46;
+            this.searchStaffIdTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchStaffIdTxt_KeyPress);
             // 
             // staffIdTxt
             // 
@@ -285,6 +321,7 @@
             this.phoneNoTxt.Name = "phoneNoTxt";
             this.phoneNoTxt.Size = new System.Drawing.Size(199, 14);
             this.phoneNoTxt.TabIndex = 45;
+            this.phoneNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNoTxt_KeyPress);
             // 
             // motherMaidenNameTxt
             // 
@@ -361,6 +398,16 @@
             this.uploadButton.UseVisualStyleBackColor = false;
             this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BankApp.Properties.Resources.download;
+            this.pictureBox1.Location = new System.Drawing.Point(421, 60);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(91, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
             // divorcedRadioButton
             // 
             this.divorcedRadioButton.AutoSize = true;
@@ -405,6 +452,16 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(221, 21);
             this.dateTimePicker1.TabIndex = 32;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(327, 347);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(89, 16);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Last Edited On:";
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -424,6 +481,16 @@
             this.label15.Size = new System.Drawing.Size(115, 16);
             this.label15.TabIndex = 19;
             this.label15.Text = "Residential Address: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(327, 326);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 16);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Registered On:";
             // 
             // label18
             // 
@@ -649,70 +716,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "EDIT BANK STAFF";
             // 
-            // searchButton
-            // 
-            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.Location = new System.Drawing.Point(363, 33);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(20, 16);
-            this.searchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.searchButton.TabIndex = 54;
-            this.searchButton.TabStop = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BankApp.Properties.Resources.download;
-            this.pictureBox1.Location = new System.Drawing.Point(421, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(327, 326);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 16);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Registered On:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(327, 347);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(89, 16);
-            this.label24.TabIndex = 10;
-            this.label24.Text = "Last Edited On:";
-            // 
-            // dateOfRegistrationTxt
-            // 
-            this.dateOfRegistrationTxt.BackColor = System.Drawing.Color.White;
-            this.dateOfRegistrationTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dateOfRegistrationTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateOfRegistrationTxt.Location = new System.Drawing.Point(414, 327);
-            this.dateOfRegistrationTxt.Name = "dateOfRegistrationTxt";
-            this.dateOfRegistrationTxt.ReadOnly = true;
-            this.dateOfRegistrationTxt.Size = new System.Drawing.Size(159, 14);
-            this.dateOfRegistrationTxt.TabIndex = 43;
-            // 
-            // lastEditedTxt
-            // 
-            this.lastEditedTxt.BackColor = System.Drawing.Color.White;
-            this.lastEditedTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lastEditedTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastEditedTxt.Location = new System.Drawing.Point(414, 347);
-            this.lastEditedTxt.Name = "lastEditedTxt";
-            this.lastEditedTxt.ReadOnly = true;
-            this.lastEditedTxt.Size = new System.Drawing.Size(159, 14);
-            this.lastEditedTxt.TabIndex = 42;
-            // 
             // EditStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -723,9 +726,9 @@
             this.Size = new System.Drawing.Size(587, 401);
             this.editStaffPanel.ResumeLayout(false);
             this.editStaffPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

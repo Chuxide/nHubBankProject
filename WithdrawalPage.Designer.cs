@@ -53,6 +53,7 @@
             this.nameTxt = new System.Windows.Forms.TextBox();
             this.errorwithdrawalSlipNoLabel = new System.Windows.Forms.Label();
             this.errorChequeBearerLabel = new System.Windows.Forms.Label();
+            this.errorUpload = new System.Windows.Forms.Label();
             this.errorChequeNoLabel = new System.Windows.Forms.Label();
             this.searchErrorLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
@@ -100,6 +101,7 @@
             this.withdrawalPagePanel.Controls.Add(this.nameTxt);
             this.withdrawalPagePanel.Controls.Add(this.errorwithdrawalSlipNoLabel);
             this.withdrawalPagePanel.Controls.Add(this.errorChequeBearerLabel);
+            this.withdrawalPagePanel.Controls.Add(this.errorUpload);
             this.withdrawalPagePanel.Controls.Add(this.errorChequeNoLabel);
             this.withdrawalPagePanel.Controls.Add(this.searchErrorLabel);
             this.withdrawalPagePanel.Controls.Add(this.dateLabel);
@@ -163,6 +165,7 @@
             this.viewWithdrawalRecordsBtn.TabIndex = 177;
             this.viewWithdrawalRecordsBtn.Text = "WITHDRAWAL RECORDS";
             this.viewWithdrawalRecordsBtn.UseVisualStyleBackColor = false;
+            this.viewWithdrawalRecordsBtn.Click += new System.EventHandler(this.viewWithdrawalRecordsBtn_Click);
             // 
             // uploadBtn
             // 
@@ -178,6 +181,8 @@
             this.uploadBtn.TabIndex = 178;
             this.uploadBtn.Text = "UPLOAD";
             this.uploadBtn.UseVisualStyleBackColor = false;
+            this.uploadBtn.Visible = false;
+            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
             // 
             // clearBtn
             // 
@@ -230,6 +235,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 174;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // pictureBox1
             // 
@@ -270,6 +276,7 @@
             this.searchAccountNoTxt.Name = "searchAccountNoTxt";
             this.searchAccountNoTxt.Size = new System.Drawing.Size(87, 14);
             this.searchAccountNoTxt.TabIndex = 162;
+            this.searchAccountNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchAccountNoTxt_KeyPress);
             // 
             // staffOnDutyTxt
             // 
@@ -291,6 +298,7 @@
             this.withdrawalSlipNoTxt.Size = new System.Drawing.Size(94, 14);
             this.withdrawalSlipNoTxt.TabIndex = 167;
             this.withdrawalSlipNoTxt.Visible = false;
+            this.withdrawalSlipNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.withdrawalSlipNoTxt_KeyPress);
             // 
             // chequeBearerTxt
             // 
@@ -311,6 +319,7 @@
             this.chequeNoTxt.Size = new System.Drawing.Size(133, 14);
             this.chequeNoTxt.TabIndex = 167;
             this.chequeNoTxt.Visible = false;
+            this.chequeNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.chequeNoTxt_KeyPress);
             // 
             // withdrawalAmountTxt
             // 
@@ -388,6 +397,18 @@
             this.errorChequeBearerLabel.TabIndex = 148;
             this.errorChequeBearerLabel.Text = "*";
             this.errorChequeBearerLabel.Visible = false;
+            // 
+            // errorUpload
+            // 
+            this.errorUpload.AutoSize = true;
+            this.errorUpload.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorUpload.ForeColor = System.Drawing.Color.Red;
+            this.errorUpload.Location = new System.Drawing.Point(405, 198);
+            this.errorUpload.Name = "errorUpload";
+            this.errorUpload.Size = new System.Drawing.Size(12, 15);
+            this.errorUpload.TabIndex = 148;
+            this.errorUpload.Text = "*";
+            this.errorUpload.Visible = false;
             // 
             // errorChequeNoLabel
             // 
@@ -617,5 +638,6 @@
         private System.Windows.Forms.TextBox withdrawalSlipNoTxt;
         private System.Windows.Forms.Label errorwithdrawalSlipNoLabel;
         private System.Windows.Forms.Label withdrawalSlipNoLabel;
+        private System.Windows.Forms.Label errorUpload;
     }
 }

@@ -31,17 +31,31 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllCustomers));
             this.allCustomersPanel = new System.Windows.Forms.Panel();
             this.dateLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.searchButton = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchCriteriaTxt = new System.Windows.Forms.TextBox();
+            this.searchErrorLabel = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.allCustomersPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).BeginInit();
             this.SuspendLayout();
             // 
             // allCustomersPanel
             // 
             this.allCustomersPanel.BackColor = System.Drawing.Color.White;
+            this.allCustomersPanel.Controls.Add(this.comboBox1);
+            this.allCustomersPanel.Controls.Add(this.searchButton);
+            this.allCustomersPanel.Controls.Add(this.panel1);
+            this.allCustomersPanel.Controls.Add(this.searchCriteriaTxt);
+            this.allCustomersPanel.Controls.Add(this.searchErrorLabel);
+            this.allCustomersPanel.Controls.Add(this.label23);
             this.allCustomersPanel.Controls.Add(this.dateLabel);
             this.allCustomersPanel.Controls.Add(this.dataGridView1);
             this.allCustomersPanel.Controls.Add(this.label1);
@@ -86,6 +100,7 @@
             this.dataGridView1.GridColor = System.Drawing.Color.SlateGray;
             this.dataGridView1.Location = new System.Drawing.Point(0, 49);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.SlateGray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,6 +109,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(587, 272);
             this.dataGridView1.TabIndex = 3;
             // 
@@ -108,6 +124,69 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "ALL CUSTOMER ACCOUNTS";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(102, 330);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(147, 24);
+            this.comboBox1.TabIndex = 120;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
+            this.searchButton.Location = new System.Drawing.Point(402, 332);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(20, 16);
+            this.searchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.searchButton.TabIndex = 119;
+            this.searchButton.TabStop = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.Location = new System.Drawing.Point(255, 350);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(142, 4);
+            this.panel1.TabIndex = 118;
+            // 
+            // searchCriteriaTxt
+            // 
+            this.searchCriteriaTxt.BackColor = System.Drawing.Color.White;
+            this.searchCriteriaTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchCriteriaTxt.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchCriteriaTxt.Location = new System.Drawing.Point(256, 333);
+            this.searchCriteriaTxt.Name = "searchCriteriaTxt";
+            this.searchCriteriaTxt.Size = new System.Drawing.Size(140, 14);
+            this.searchCriteriaTxt.TabIndex = 117;
+            // 
+            // searchErrorLabel
+            // 
+            this.searchErrorLabel.AutoSize = true;
+            this.searchErrorLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.searchErrorLabel.Location = new System.Drawing.Point(26, 334);
+            this.searchErrorLabel.Name = "searchErrorLabel";
+            this.searchErrorLabel.Size = new System.Drawing.Size(12, 15);
+            this.searchErrorLabel.TabIndex = 115;
+            this.searchErrorLabel.Text = "*";
+            this.searchErrorLabel.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(38, 333);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(64, 15);
+            this.label23.TabIndex = 116;
+            this.label23.Text = "Search by ";
+            // 
             // AllCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +197,7 @@
             this.allCustomersPanel.ResumeLayout(false);
             this.allCustomersPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,5 +208,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox searchButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox searchCriteriaTxt;
+        private System.Windows.Forms.Label searchErrorLabel;
+        private System.Windows.Forms.Label label23;
     }
 }

@@ -17,7 +17,7 @@ namespace BankApp
         string gender = string.Empty;
         string m_status = string.Empty;
         int no;
-        BankingPEntities1 BSE;
+        BankingPEntities5 BSE;
         MemoryStream ms;
 
         public NewStaff()
@@ -31,7 +31,7 @@ namespace BankApp
 
         private void loadStaff()
         {
-            BSE = new BankingPEntities1();
+            BSE = new BankingPEntities5();
             var item = BSE.staffAccount1.ToArray();
             no = item.LastOrDefault().staffId + 1;
             staffIdTxt.Text = "KS" + Convert.ToString(no);
@@ -177,7 +177,7 @@ namespace BankApp
                     m_status = "Divorced";
                 }
 
-                BSE = new BankingPEntities1();
+                BSE = new BankingPEntities5();
                 staffAccount1 staff = new staffAccount1();
                 staff.staffId = no;
                 staff.First_Name = firstNameTxt.Text;
@@ -236,6 +236,21 @@ namespace BankApp
             userControl.BringToFront();
         }
 
+        private void emergencyPhoneNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void phoneNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 
 }

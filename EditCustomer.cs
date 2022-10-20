@@ -13,7 +13,7 @@ namespace BankApp
 {
     public partial class EditCustomer : UserControl
     {
-        BankingPEntities1 dbe;
+        BankingPEntities5 dbe;
         MemoryStream ms;
       //  BindingList<staffAccount1> bi;
         string gender = string.Empty;
@@ -98,7 +98,7 @@ namespace BankApp
             try
             {
               //  bi = new BindingList<staffAccount1>();
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
                 int accountNoSearch = Convert.ToInt32(searchAccountNoTxt.Text);
                 var item = dbe.customerAccounts.Where(a => a.Account_No == accountNoSearch).FirstOrDefault();
                 if (item == null)
@@ -239,7 +239,7 @@ namespace BankApp
                     m_status = "Divorced";
                 }
 
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
 
 
                 int a = Convert.ToInt32(accountNoTxt.Text);
@@ -248,7 +248,7 @@ namespace BankApp
                 dbe.SaveChanges();
 
 
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
                 customerAccount customer = new customerAccount();
                 customer.Account_No = a;
                 customer.First_Name = firstNameTxt.Text;
@@ -294,7 +294,7 @@ namespace BankApp
             }
             else
             {
-                dbe = new BankingPEntities1();
+                dbe = new BankingPEntities5();
                 int a = Convert.ToInt32(accountNoTxt.Text);
                 customerAccount selectedCustomer = dbe.customerAccounts.First(s => s.Account_No.Equals(a));
                 dbe.customerAccounts.Remove(selectedCustomer);
@@ -303,6 +303,30 @@ namespace BankApp
                 CustomerPage customerpage = new CustomerPage();
                 addUserControl(customerpage);
                 MessageBox.Show("The customer with account number: " + accountNoTxt.Text + " has been deleted successfully!");
+            }
+        }
+
+        private void searchAccountNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void phoneNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void emergencyPhoneNoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

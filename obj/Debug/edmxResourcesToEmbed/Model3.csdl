@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BankingPModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BankingPEntities4" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="customerAccounts" EntityType="BankingPModel2.customerAccount" />
+    <EntitySet Name="Deposits" EntityType="BankingPModel2.Deposit" />
+    <EntitySet Name="staffAccount1" EntityType="BankingPModel2.staffAccount1" />
+    <EntitySet Name="Withdrawals" EntityType="BankingPModel2.Withdrawal" />
+  </EntityContainer>
+  <EntityType Name="customerAccount">
+    <Key>
+      <PropertyRef Name="Account_No" />
+    </Key>
+    <Property Name="Account_No" Type="Int32" Nullable="false" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Marital_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="State_Of_Origin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mother_Maiden_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Residential_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Emergency_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emergency_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Balance" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Date_Of_Registration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Edited" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Staff_On_Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Deposit">
+    <Key>
+      <PropertyRef Name="Serial_No" />
+    </Key>
+    <Property Name="Serial_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Previous_Balance" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Account_No" Type="Int32" />
+    <Property Name="Deposit_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Deposit_Amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Depositor_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Depositor_Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Staff_On_Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Of_Deposit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="staffAccount1">
+    <Key>
+      <PropertyRef Name="staffId" />
+    </Key>
+    <Property Name="staffId" Type="Int32" Nullable="false" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Marital_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="State_Of_Origin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mother_Maiden_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Residential_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emergency_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emergency_Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Of_Registration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Edited" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Withdrawal">
+    <Key>
+      <PropertyRef Name="Serial_No" />
+    </Key>
+    <Property Name="Serial_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Account_No" Type="Int32" />
+    <Property Name="Customer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Previous_Balance" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Withdrawal_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Withdrawal_Amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Date_Of_Withdrawal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Staff_On_Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_Bearer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Withdrawal_Slip_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_Bearer_Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

@@ -202,6 +202,7 @@
             this.emergencyPhoneNoTxt.Name = "emergencyPhoneNoTxt";
             this.emergencyPhoneNoTxt.Size = new System.Drawing.Size(183, 14);
             this.emergencyPhoneNoTxt.TabIndex = 118;
+            this.emergencyPhoneNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emergencyPhoneNoTxt_KeyPress);
             // 
             // emergencyNameTxt
             // 
@@ -431,6 +432,7 @@
             this.searchAccountNoTxt.Name = "searchAccountNoTxt";
             this.searchAccountNoTxt.Size = new System.Drawing.Size(88, 14);
             this.searchAccountNoTxt.TabIndex = 93;
+            this.searchAccountNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchAccountNoTxt_KeyPress);
             // 
             // phoneNoTxt
             // 
@@ -440,6 +442,7 @@
             this.phoneNoTxt.Name = "phoneNoTxt";
             this.phoneNoTxt.Size = new System.Drawing.Size(199, 14);
             this.phoneNoTxt.TabIndex = 92;
+            this.phoneNoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNoTxt_KeyPress);
             // 
             // motherMaidenNameTxt
             // 

@@ -63,7 +63,7 @@ namespace BankApp
         private void button1_Click(object sender, EventArgs e)
         {
 
-            BankingPEntities1 dbe = new BankingPEntities1();
+            BankingPEntities5 dbe = new BankingPEntities5();
             if (textBox1.Text != string.Empty || textBox2.Text != string.Empty)
             {
                 var user1 = dbe.Admins.FirstOrDefault(a => a.Username.Equals(textBox1.Text));    
