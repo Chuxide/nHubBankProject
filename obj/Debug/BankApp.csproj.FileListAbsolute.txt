@@ -52,3 +52,6 @@ C:\Users\USER\source\repos\BankApp\obj\Debug\BankApp.changePassword_Staff.resour
 C:\Users\USER\source\repos\BankApp\obj\Debug\BankApp.MyProfile_Staff.resources
 C:\Users\USER\source\repos\BankApp\obj\Debug\BankApp.ChangePassword_Admin.resources
 C:\Users\USER\source\repos\BankApp\obj\Debug\BankApp.changeUsername_Staff.resources
+C:\Users\user\Desktop\nHubBankProject\bin\Debug\BankApp.exe.config
+C:\Users\user\Desktop\nHubBankProject\obj\Debug\BankApp.exe
+C:\Users\user\Desktop\nHubBankProject\obj\Debug\BankApp.pdb
