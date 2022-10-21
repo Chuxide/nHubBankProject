@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using beatrice;
 
 namespace BankApp
 {
@@ -69,6 +70,11 @@ namespace BankApp
             AdminLogin admin = new AdminLogin();
             admin.Show();
             Visible = false;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
