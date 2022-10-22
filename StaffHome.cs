@@ -36,7 +36,11 @@ namespace BankApp
             addUserControl(homepage);
         }
 
-
+        private void HideSubmenu()
+        {
+            if (slidepanel.Visible == true)
+                slidepanel.Visible = false;
+        }
 
         // USER CONTROL METHOD
         private void addUserControl(UserControl userControl)
@@ -45,6 +49,7 @@ namespace BankApp
             panelContainerNewStaff.Controls.Clear();
             panelContainerNewStaff.Controls.Add(userControl);
             userControl.BringToFront();
+            HideSubmenu();
         }
 
 
@@ -60,6 +65,7 @@ namespace BankApp
 
             HomePageStaff homepage = new HomePageStaff();
             addUserControl(homepage);
+            HideSubmenu();
         }
 
 
@@ -101,6 +107,7 @@ namespace BankApp
             customerTimer.Start();
             CustomerPage custompage = new CustomerPage();
             addUserControl(custompage);
+            HideSubmenu();
         }
 
         private void newCustomerAccountButton_Click(object sender, EventArgs e)
@@ -119,6 +126,7 @@ namespace BankApp
         {
             AllCustomers_Staff viewcustomerpage = new AllCustomers_Staff();
             addUserControl(viewcustomerpage);
+            HideSubmenu();
         }
 
 
@@ -166,6 +174,7 @@ namespace BankApp
 
             TransactionsPage homepage = new TransactionsPage();
             addUserControl(homepage);
+            HideSubmenu();
         }
 
         private void closebtn_Click(object sender, EventArgs e)
@@ -205,6 +214,7 @@ namespace BankApp
 
             BalanceSheet_Staff balancesheetpage = new BalanceSheet_Staff();
             addUserControl(balancesheetpage);
+            HideSubmenu();       
         }
 
 
@@ -248,6 +258,7 @@ namespace BankApp
 
             ProfileSettingsPage profilepage = new ProfileSettingsPage();
             addUserControl(profilepage);
+            HideSubmenu();
         }
 
         private void resetPasswordButtonn_Click(object sender, EventArgs e)
