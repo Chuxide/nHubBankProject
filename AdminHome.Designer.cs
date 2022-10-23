@@ -102,7 +102,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.staffContainer);
             this.panel1.Controls.Add(this.profileSettingsContainer);
             this.panel1.Controls.Add(this.transactionsContainer);
@@ -500,7 +500,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.SlateGray;
+            this.panel4.BackColor = System.Drawing.Color.Gray;
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -550,7 +550,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SlateGray;
+            this.panel2.BackColor = System.Drawing.Color.Gray;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(163, 0);
             this.panel2.Name = "panel2";
@@ -559,7 +559,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SlateGray;
+            this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
@@ -576,7 +576,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(4, 101);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "System";
             // 
@@ -587,7 +587,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 16);
+            this.label3.Size = new System.Drawing.Size(84, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Management";
             // 
@@ -598,7 +598,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 16);
+            this.label2.Size = new System.Drawing.Size(37, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Bank ";
             // 
@@ -626,7 +626,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SlateGray;
+            this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(310, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(281, 49);

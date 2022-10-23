@@ -317,18 +317,26 @@ namespace BankApp
             loginButton.Click += (sender, args) =>
             {
                 BankingPEntities5 dbe = new BankingPEntities5();
-                if (userName.Text != string.Empty || passWord.Text != string.Empty)
+                try
                 {
-                    var user1 = dbe.Admins.FirstOrDefault(a => a.Username.Equals(userName.Text));
-                    if (user1 != null)
+                    if (userName.Text != string.Empty || passWord.Text != string.Empty)
                     {
-                        if (user1.Password.Equals(passWord.Text))
+                        var user1 = dbe.Admins.FirstOrDefault(a => a.Username.Equals(userName.Text));
+                        if (user1 != null)
                         {
-                            adminIdHolder.Text = user1.Id.ToString();
-                            CoAdminHome adminhomepage = new CoAdminHome();
-                            adminhomepage.Show();
-                            Visible = false;
+                            if (user1.Password.Equals(passWord.Text))
+                            {
+                                adminIdHolder.Text = user1.Id.ToString();
+                                CoAdminHome adminhomepage = new CoAdminHome();
+                                adminhomepage.Show();
+                                Visible = false;
+                            }
+                            else
+                            {
+                                errorMessage.Visible = true;
+                            }
                         }
+
                         else
                         {
                             errorMessage.Visible = true;
@@ -337,16 +345,17 @@ namespace BankApp
 
                     else
                     {
-                        errorMessage.Visible = true;
+                        asterixPassword.Visible = true;
+                        asterixUserName.Visible = true;
+                        MessageBox.Show("Please enter username and password.");
                     }
                 }
-
-                else
+                catch (Exception)
                 {
-                    asterixPassword.Visible = true;
-                    asterixUserName.Visible = true;
-                    MessageBox.Show("Please enter username and password.");
+
+                    MessageBox.Show("invalid enteries");
                 }
+                
             };
 
             
