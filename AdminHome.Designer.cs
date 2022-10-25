@@ -102,7 +102,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.staffContainer);
             this.panel1.Controls.Add(this.profileSettingsContainer);
             this.panel1.Controls.Add(this.transactionsContainer);
@@ -500,7 +500,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.SlateGray;
+            this.panel4.BackColor = System.Drawing.Color.Gray;
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -551,7 +551,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SlateGray;
+            this.panel2.BackColor = System.Drawing.Color.Gray;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(163, 0);
             this.panel2.Name = "panel2";
@@ -560,7 +560,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SlateGray;
+            this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
@@ -628,7 +628,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SlateGray;
+            this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(310, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(281, 49);
@@ -694,7 +694,7 @@
             // 
             this.adminIdLabel.AutoSize = true;
             this.adminIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminIdLabel.ForeColor = System.Drawing.Color.SlateGray;
+            this.adminIdLabel.ForeColor = System.Drawing.Color.Gray;
             this.adminIdLabel.Location = new System.Drawing.Point(461, 30);
             this.adminIdLabel.Name = "adminIdLabel";
             this.adminIdLabel.Size = new System.Drawing.Size(50, 13);
